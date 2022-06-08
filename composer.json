@@ -1,11 +1,11 @@
 {
-    "name": "draw/raffling",
+    "name": "drawapp/raffling",
     "description": "Raffling package app",
     "type": "library",
     "license": "mit",
     "autoload": {
         "psr-4": {
-            "Draw\\Raffling\\": "src/"
+            "Drawapp\\Raffling\\": "src/"
         }
     },
     "authors": [
