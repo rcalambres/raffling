@@ -1,5 +1,5 @@
 <?php
-namespace Sorteando\Draw\Domain\Model\Exceptions;
+namespace Drawapp\Raffling\Domain\Model\Exceptions;
 
 class DrawEmptyAwardsException extends DrawNotPossibleException
 {

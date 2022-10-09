@@ -1,9 +1,9 @@
 <?php
-namespace Sorteando\Draw\Domain\Model;
+namespace Drawapp\Raffling\Domain\Model;
 
-use Sorteando\Draw\Domain\Model\Exceptions\DrawParticipantsInsufficientException;
-use Sorteando\Draw\Domain\Model\Exceptions\DrawEmptyAwardsException;
-use Sorteando\Draw\Domain\Model\Exceptions\DrawNotPossibleException;
+use Drawapp\Raffling\Domain\Model\Exceptions\DrawParticipantsInsufficientException;
+use Drawapp\Raffling\Domain\Model\Exceptions\DrawEmptyAwardsException;
+use Drawapp\Raffling\Domain\Model\Exceptions\DrawNotPossibleException;
 
 class Draw
 {
@@ -38,59 +38,19 @@ class Draw
         $this->awards->del($position);
     }
     
-    public function showParticipants(): string
+    public function getParticipants(): ItemList
     {
-        return $this->participants->show();
+        return $this->participants;
     }
     
-    public function showAwards(): string
+    public function getAwards(): ItemList
     {
-        return $this->awards->show();
+        return $this->awards;
     }
     
-    public function showResult(): string
+    public function getResult(): DrawResult
     {
-        return $this->result->show();
+        return $this->result;
     }
-    
-    /*
-     * Participants >= awards
-     */
-    protected function isValid(): bool
-    {
-        if ($this->participants->count() <= 0 || $this->participants->count() < $this->awards->count()){
-            throw new DrawParticipantsInsufficientException();
-        }
-        
-        if ($this->awards->count() <= 0){
-            throw new DrawEmptyAwardsException();
-        }
-        
-        return $this->participants->count() >= $this->awards->count();
-    }
-
-    public function raffle(): void
-    {
-        try{
-            if ($this->isValid()){
-                $copyOfParticipants = clone $this->participants;
-                $copyOfAwards = clone $this->awards;
-                while ($award = $copyOfAwards->pop()){
-                    if ($award instanceof DrawItemNull){
-                        break; // exit while
-                    }
-                    $winner = $copyOfParticipants->rand();
-                    $awardAndWinner = new DrawMultiItem($award, $winner);
-                    $this->result->add($awardAndWinner);
-                    $copyOfParticipants->del($winner); // one participant -> one award
-                }
-            }
-        }catch(DrawNotPossibleException $notPossibleDraw){
-            throw $notPossibleDraw;
-        }
-        
-        
-    }
-    
 
 }

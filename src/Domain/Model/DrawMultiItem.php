@@ -1,5 +1,5 @@
 <?php
-namespace Sorteando\Draw\Domain\Model;
+namespace Drawapp\Raffling\Domain\Model;
 
 class DrawMultiItem implements Item
 {
