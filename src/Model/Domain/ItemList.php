@@ -1,5 +1,5 @@
 <?php
-namespace Drawapp\Raffling\Domain\Model;
+namespace Drawapp\Raffling\Model\Domain;
 
 interface ItemList
 {  

@@ -1,5 +1,5 @@
 <?php
-namespace Drawapp\Raffling\Domain\Model\Exceptions;
+namespace Drawapp\Raffling\Model\Domain\Exceptions;
 
 class DrawNotPossibleException extends \Exception
 {

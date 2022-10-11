@@ -1,5 +1,7 @@
 <?php
-namespace Drawapp\Raffling\Domain\Model;
+namespace Drawapp\Raffling\Model\Domain\DrawItem;
+
+use Drawapp\Raffling\Model\Domain\Item;
 
 class DrawMultiItem implements Item
 {

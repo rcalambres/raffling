@@ -1,5 +1,9 @@
 <?php
-namespace Drawapp\Raffling\Domain\Model;
+namespace Drawapp\Raffling\Model\Domain\Draw;
+
+use Drawapp\Raffling\Model\Domain\ItemList;
+use Drawapp\Raffling\Model\Domain\DrawItem\DrawItemList;
+use Drawapp\Raffling\Model\Domain\DrawItem\DrawMultiItem;
 
 class DrawResult
 {

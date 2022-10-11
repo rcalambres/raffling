@@ -1,9 +1,13 @@
 <?php
-namespace Drawapp\Raffling\Domain\Model;
+namespace Drawapp\Raffling\Model\Domain\Draw;
 
-use Drawapp\Raffling\Domain\Model\Exceptions\DrawParticipantsInsufficientException;
-use Drawapp\Raffling\Domain\Model\Exceptions\DrawEmptyAwardsException;
-use Drawapp\Raffling\Domain\Model\Exceptions\DrawNotPossibleException;
+use Drawapp\Raffling\Model\Domain\ItemList;
+use Drawapp\Raffling\Model\Domain\Award\Award;
+use Drawapp\Raffling\Model\Domain\DrawItem\DrawItemList;
+use Drawapp\Raffling\Model\Domain\Participant\Participant;
+use Drawapp\Raffling\Model\Domain\Exceptions\DrawEmptyAwardsException;
+use Drawapp\Raffling\Model\Domain\Exceptions\DrawNotPossibleException;
+use Drawapp\Raffling\Model\Domain\Exceptions\DrawParticipantsInsufficientException;
 
 class Draw
 {

@@ -1,5 +1,8 @@
 <?php
-namespace Drawapp\Raffling\Domain\Model;
+namespace Drawapp\Raffling\Model\Domain;
+
+use Drawapp\Raffling\Model\Domain\Item;
+use Drawapp\Raffling\Model\Domain\DrawItem\DrawItemNull;
 
 abstract class AbastractItemList implements ItemList
 {
